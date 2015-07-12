@@ -50,20 +50,23 @@ class Connection:
     def recv_to_buf(self, bufsize=10000, timeout=DEFAULT_TIMEOUT, dontraise=False):
         if bufsize <= 0: return
         self._socket.settimeout(timeout)
-        try:
-            self.buf += self._socket.recv(bufsize)
-        except socket.timeout:
-            if not dontraise:
-                raise
+        flag = True
+        while flag:
+            try:
+                self.buf += self._socket.recv(bufsize)
+                flag = False
+            except socket.timeout:
+                if not dontraise:
+                    raise
 
     def getFromBuf(self, size):
         tmp = self.buf[:size]
         self.buf = self.buf[len(tmp):]
         return tmp
 
-    def recvn(self, n, dontraise=False):
+    def recvn(self, n, timeout=DEFAULT_TIMEOUT, dontraise=False):
         """Receive and Return exact n bytes"""
-        self.recv_to_buf(bufsize=n-len(self.buf),dontraise=dontraise)
+        self.recv_to_buf(bufsize=n-len(self.buf), timeout=timeout, dontraise=dontraise)
         return self.getFromBuf(n)
 
     def recv_until(self, keywords, timeout=DEFAULT_TIMEOUT):
@@ -84,7 +87,7 @@ class Connection:
         else:
             raise
 
-        if index == notFound:
+        if index == notFound or index == -1:
             return self.recv_until(keywords, timeout)
         return self.getFromBuf(index+len(aim_keyword))
 
