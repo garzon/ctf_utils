@@ -71,7 +71,6 @@ class Connection:
 
     def recv_until(self, keywords, timeout=DEFAULT_TIMEOUT):
         """Receive incoming data until one of the provided keywords is found."""
-        self.recv_to_buf()
         notFound = 99999999
         index = notFound
 
@@ -88,6 +87,7 @@ class Connection:
             raise
 
         if index == notFound or index == -1:
+            self.recv_to_buf()
             return self.recv_until(keywords, timeout)
         return self.getFromBuf(index+len(aim_keyword))
 
@@ -95,9 +95,9 @@ class Connection:
         """Receive incoming data until it matches the given regex."""
         if isinstance(regex, str):
             regex = re.compile(regex)
-        self.recv_to_buf()
         match = regex.search(self.buf)
         if match == None:
+            self.recv_to_buf()
             return self.recv_until_match(regex, timeout)
         match = match.group(group)
         index = self.buf.find(match)
