@@ -59,3 +59,10 @@ final answer:
 
 #vortex5
 #:4VtbC4lr
+
+vortex5@melinda:~$ cd /vortex
+vortex5@melinda:/vortex$ ./vortex5
+Password: rlTf6
+
+#vortex6
+#*uy5qDRb2
