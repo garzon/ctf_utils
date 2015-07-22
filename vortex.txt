@@ -66,3 +66,9 @@ Password: rlTf6
 
 #vortex6
 #*uy5qDRb2
+#include <stdlib.h>
+int main(int argc, char **argv) {
+        execve("/vortex/vortex6",argv,0);
+        return 0;
+}
+
